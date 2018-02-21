@@ -8,13 +8,11 @@ pipeline {
     }
     stage('run') {
       steps {
-        sh '''#!/bin/bash
+        retry(count: 3) {
+          sh '''#!/bin/bash
 python py/main.py 3 blabla'''
-      }
-    }
-    stage('finish') {
-      steps {
-        echo 'tobe continued'
+        }
+        
       }
     }
   }
