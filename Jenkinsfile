@@ -10,10 +10,13 @@ pipeline {
       steps {
         retry(count: 3) {
           sh '''#!/bin/bash
-python py/main.py 3 blabla'''
+python py/main.py $retrynum blabla'''
         }
         
       }
     }
+  }
+  environment {
+    retrynum = '$retry'
   }
 }
