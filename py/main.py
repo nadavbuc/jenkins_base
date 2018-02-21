@@ -8,4 +8,5 @@ elif sys.argv[1] > '3':
     if (int(sys.argv[1]) + 1) % '3' == '0':
         print ("Jenkins job name: " + str(sys.argv[2]))
 else:
-    abc
+    print (sys.argv[1])
+    print (sys.argv[2])
